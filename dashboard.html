@@ -459,51 +459,63 @@
             </div>
           </div>
 
+
+          <!-- CURRENT ORDER DETAILS DASHBOARD -->
           <div class="row mt-3 px-3">
             <div class="dashboard-content p-4">
-                <h4 class="cur fw-bold">Current Order Details</h4>
+                
         
                 <div class="row align-items-center ">
-                   
+                     
+                  <!-- ORDER DETAILS TEXTS -->
                     <div class="col-md-4 ">
-                        <form>
-                            <div class="mb-3 order-card ords">
-                                <label class="form-label fw-bold">Size:</label>
-                                <small class="texts">Small</small>
+                      <h4 class="fw-bold details-title">Current Order Details</h4>
+                        <form class="d-flex justify-content-between flex-column p-3 gap-5">
+
+                            <div class=" details-card ords">
+                                <label class="details-category">Size:</label>
+                                <p class="details-texts ms-5 ps-3">Small</p>
                             </div>
-                            <div class="mb-3 order-card ords">
-                                <label class="form-label fw-bold">Flowers:</label>
-                                <small class="texts">Rose 7x</small>
+
+                            <div class=" details-card ords">
+                                <label class="details-category">Flowers:</label>
+                                <p class="details-texts ms-5 ps-3">Rose 7x</p>
                             </div>
-                            <div class="mb-3 order-card ords">
-                                <label class="form-label fw-bold">Package:</label>
-                                <small class="texts">Craft</small>
+
+                            <div class=" details-card ords">
+                                <label class="details-category">Package:</label>
+                                <p class="details-texts ms-5 ps-3">Craft</p>
                             </div>
-                            <div class="mb-3 order-card ords">
-                                <label class="form-label fw-bold">Card:</label>
-                                <small class="texts">Anniversary Card</small>
+                            
+                            <div class=" details-card ords">
+                                <label class="details-category">Card:</label>
+                                <p class="details-texts ms-5 ps-3">Anniversary Card</p>
                             </div>
                         </form>
                     </div>
         
                  
-                    <div class="col-md-4 text-center">
-                        <img src="images/boks.png" class="img-fluid img-thumbnail rounded" alt="Bouquet">
-                        <p class="fw-bold mt-2 text-white">Flower Arrangement</p>
+                    <!-- ORDER DETAILS IMAGE -->
+                    <div class="col-md-4 d-flex flex-column align-self-start align-items-center justify-content-center details-img">
+                        <img src="images/boks.png" class="img-fluid img-thumbnail rounded " alt="Bouquet">
+                        <p class="mt-2 text-white">Flower Arrangement</p>
                     </div>
         
-                    <div class="col-md-4">
-                        <div class="mb-3 adds">
-                            <textarea class="form-control message-box" placeholder="Additional Message to the Designer..."></textarea>
-                            <label class="form-label fw-bold text-white">Additional Message:</label>
-                        </div>
-                        <div class="price-box p-3">
-                            <p class="fw-bold">Total price: <span class="price">₱650.00 PHP</span></p>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                            <button class="btn btn-danger">Cancel Order</button>
-                            <button class="btn btn-success">Complete Order</button>
-                        </div>
+
+                    <!-- ORDER DETAILS ADDIONAL INFO -->
+                    <div class="col-md-4 ps-0 d-flex flex-column  ">
+                      <div class="mb-3 additional-message text-center">
+                          <textarea class="form-control message-box " placeholder="Additional Message to the Designer..."></textarea>
+                          <label class="form-label text-white">Additional Message</label>
+                      </div>
+                      <div class="price-box p-5 d-flex justify-content-between">
+                          <p class="price-text">Total price: </p>
+                          <span class="price">₱650.00 PHP</span>
+                      </div>
+                      <div class="d-flex info-buttons justify-content-between">
+                          <button class="btn btn-cancel">Cancel Order</button>
+                          <button class="btn btn-complete">Complete Order</button>
+                      </div>
                     </div>
                 </div>
             </div>
