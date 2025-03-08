@@ -1,24 +1,52 @@
 body {
     background-color: #FFE3EB;
 }
-.table th, .table td {
+
+.title-manage-accounts {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px !important;
+    font-weight: 500 !important;
+    color: #1C000E;
+}
+
+.table th,
+.table td {
     vertical-align: middle;
 }
 
-.new {
-    background-color: #ff66a3 !important; 
-    color: white !important; 
-    font-weight: bold;
+.btn.btn-new-staff {
+    background-color: #FF69B5 !important;
+    color: #333333 !important;
+
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease;
+
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 500;
 }
 
-.new:hover {
-    background-color: #ff3385 !important; 
+.btn-new-staff:hover {
+    background-color: #ff3385 !important;
 }
+
+/* .form-select option:nth-child(1){
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px;
+    color: #B5B7C0 !important;
+} */
+
+.form-select,
+.form-control::placeholder {
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 12px !important;
+    color: #B5B7C0 !important;
+}
+
+
+
 
 .remove-btn {
     border: none;
@@ -27,7 +55,7 @@ body {
 }
 
 .remove-btn i {
-    color: black; 
+    color: black;
     transition: color 0.3s ease-in-out;
 }
 
@@ -59,11 +87,12 @@ body {
 }
 
 .notification-header-container {
-    
+
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
 }
+
 .notification-header-container h5 {
     margin: 0;
     font-size: 24px;
@@ -73,9 +102,9 @@ body {
 
 .profile-section {
     position: absolute;
-    right: 50px; 
-    top: 5%;  
-    transform: translateY(-50%);  
+    right: 50px;
+    top: 5%;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
 }
@@ -96,10 +125,46 @@ body {
     height: 30px;
     border-radius: 50%;
 }
-.fa-solid{
+
+.fa-solid {
     padding: 20px;
     margin-bottom: 40px;
 }
-.ccontainer{
-    background-color: #FFEDFC  ;
+
+.ccontainer {
+    background-color: #FFEDFC;
+}
+
+
+/* .table-accounts table {
+    background-color: black;
+} */
+
+.table-accounts .card,
+.table-accounts table,
+.table-accounts thead,
+.table-accounts th,
+.table-accounts tr,
+.table-accounts tbody,
+.table-accounts td {
+    background-color: #FFEDFC !important;
+    border-radius: 30px;
+    /* color: FFE3EB; */
+}
+
+.table-accounts th {
+    color: #9CA3AF !important;
+    font-weight: 500;
+
+}
+
+.table-accounts {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.table-accounts th,
+.table-accounts td {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
