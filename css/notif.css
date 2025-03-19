@@ -129,12 +129,27 @@
  }
 
  .notification-header-container .btn {
+
+     color: #FA2290;
+     padding: 10px;
+ }
+
+ .bg-btn {
      background: #FAC1D9;
      border: none;
-     padding: 10px;
+
      border-radius: 8px;
+ }
+
+ button.bg-btn#showAll:hover,
+ button.bg-btn#showUnread:hover,
+ button.bg-btn#markAsRead:hover {
+     background-color: #FAC1D9;
+     /* Keeps the background unchanged */
      color: #FA2290;
  }
+
+
 
  .notification-header-container .btn.active {
      background: none;
