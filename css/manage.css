@@ -9,34 +9,32 @@ body {
     color: #1C000E;
 }
 
+.input-group.search-bar {
+    width: 40%;
+}
+
 .table th,
 .table td {
     vertical-align: middle;
 }
 
 .btn.btn-new-staff {
-    background-color: #FF69B5 !important;
-    color: #333333 !important;
-
+    background-color: #FF69B5;
+    color: #333333;
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
     cursor: pointer;
     transition: background 0.3s ease;
-
     font-family: 'Poppins', sans-serif !important;
     font-weight: 500;
 }
 
 .btn-new-staff:hover {
-    background-color: #ff3385 !important;
+    background-color: #ff3385;
 }
 
-/* .form-select option:nth-child(1){
-    font-family: 'Poppins', sans-serif !important;
-    font-size: 12px;
-    color: #B5B7C0 !important;
-} */
+
 
 .form-select,
 .form-control::placeholder {
@@ -148,8 +146,13 @@ body {
 .table-accounts tbody,
 .table-accounts td {
     background-color: #FFEDFC !important;
-    border-radius: 30px;
+
     /* color: FFE3EB; */
+}
+
+
+.table-accounts .card {
+    border-radius: 30px;
 }
 
 .table-accounts th {
@@ -161,6 +164,7 @@ body {
 .table-accounts {
     font-size: 16px;
     font-weight: 300;
+    overflow: hidden;
 }
 
 .table-accounts th,
@@ -168,3 +172,23 @@ body {
     text-align: center;
     font-family: 'Poppins', sans-serif;
 }
+
+
+tr.table-active {
+    border: #d10a6e 2px solid;
+    border-bottom: #d10a6e 2px solid;
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+.table-active td {
+    border-top: #d10a6e 1px solid;
+}
+
+
+.table {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+.clickable-row {}
