@@ -35,13 +35,13 @@
      background: #ffe6eb;
  }
 
- .notification-item:hover {
+ /* .notification-item:hover {
      background-color: pink;
  }
 
  .notification-item.notification-active {
      background-color: pink;
- }
+ } */
 
  .text-container.notification-unread p {
      font-weight: 500;
@@ -145,7 +145,6 @@
  button.bg-btn#showUnread:hover,
  button.bg-btn#markAsRead:hover {
      background-color: #FAC1D9;
-     /* Keeps the background unchanged */
      color: #FA2290;
  }
 

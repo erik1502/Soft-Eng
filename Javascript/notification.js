@@ -1,57 +1,61 @@
 
 
-
 document.addEventListener("DOMContentLoaded", function () {
-  const rows = document.querySelectorAll(".notification-item");
+  const showAllBtn = document.getElementById("showAll");
+  const showUnreadBtn = document.getElementById("showUnread");
+  const markAsReadBtn = document.getElementById("markAsRead");
 
-  rows.forEach(row => {
+  function toggleActiveButton(activeButton) {
+    // Remove bg-btn from "All" and "Unread" buttons
+    document.querySelectorAll("#showAll, #showUnread").forEach(btn => btn.classList.remove("bg-btn"));
+    // Add bg-btn to the clicked button
+    activeButton.classList.add("bg-btn");
+  }
+
+  function updateUnreadCount() {
+    let unreadNotifications = document.querySelectorAll(".notification-unread").length;
+    document.querySelector(".page-title-notifications p").innerHTML = `You've ${unreadNotifications} unread notification${unreadNotifications !== 1 ? 's' : ''}`;
+  }
+
+  // Toggle "notification-active" class on click
+  document.querySelectorAll(".notification-item").forEach(row => {
     row.addEventListener("click", function () {
-      // Toggle the "notification-active" class on click
       this.classList.toggle("notification-active");
     });
   });
-});
 
-function toggleActiveButton(activeButton) {
-  // Remove bg-btn only from the "All" and "Unread" buttons
-  document.querySelectorAll("#showAll, #showUnread").forEach(btn => btn.classList.remove("bg-btn"));
-
-  // Add bg-btn to the clicked button
-  activeButton.classList.add("bg-btn");
-}
-
-document.getElementById("markAsRead").addEventListener("click", function () {
-  document.querySelectorAll(".notification-container .text-container.notification-unread").forEach(function (element) {
-    element.classList.remove("notification-unread");
+  // Show unread notifications only
+  showUnreadBtn.addEventListener("click", function () {
+    document.querySelectorAll(".notification-item").forEach(item => {
+      const textContainer = item.querySelector(".text-container");
+      item.style.display = textContainer.classList.contains("notification-unread") ? "flex" : "none";
+    });
+    toggleActiveButton(this);
   });
-  updateUnreadCount();
-});
 
+  // Show all notifications
+  showAllBtn.addEventListener("click", function () {
+    document.querySelectorAll(".notification-item").forEach(item => {
+      item.style.display = "flex";
+    });
+    toggleActiveButton(this);
+  });
 
-document.getElementById("showUnread").addEventListener("click", function () {
-  document.querySelectorAll(".notification-item").forEach(function (item) {
-    const textContainer = item.querySelector(".text-container");
-    if (textContainer.classList.contains("notification-unread")) {
-      item.style.display = "flex"; // Show unread notifications
-    } else {
-      item.style.display = "none"; // Hide read notifications
+  // Mark all as read
+  markAsReadBtn.addEventListener("click", function () {
+    document.querySelectorAll(".text-container.notification-unread").forEach(element => {
+      element.classList.remove("notification-unread");
+    });
+    updateUnreadCount();
+  });
+
+  // Delete a notification
+  document.addEventListener("click", function (event) {
+    if (event.target.closest(".delete-btn")) {
+      event.target.closest(".notification-item").remove();
+      updateUnreadCount();
     }
   });
-  toggleActiveButton(this);
+
+  updateUnreadCount(); // Update unread count on page load
 });
-
-
-document.getElementById("showAll").addEventListener("click", function () {
-  document.querySelectorAll(".notification-item").forEach(function (item) {
-    item.style.display = "flex"; // Show all notifications
-  });
-  toggleActiveButton(this);
-});
-
-
-function updateUnreadCount() {
-  let unreadNotifications = document.querySelectorAll(".notification-unread").length;
-  document.querySelector(".page-title-notifications p").innerHTML = `You've ${unreadNotifications} unread notification${unreadNotifications !== 1 ? 's' : ''}`;
-}
-
-updateUnreadCount();
