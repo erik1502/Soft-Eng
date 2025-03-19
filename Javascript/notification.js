@@ -24,6 +24,7 @@ document.getElementById("markAsRead").addEventListener("click", function () {
   document.querySelectorAll(".notification-container .text-container.notification-unread").forEach(function (element) {
     element.classList.remove("notification-unread");
   });
+  updateUnreadCount();
 });
 
 
@@ -46,3 +47,11 @@ document.getElementById("showAll").addEventListener("click", function () {
   });
   toggleActiveButton(this);
 });
+
+
+function updateUnreadCount() {
+  let unreadNotifications = document.querySelectorAll(".notification-unread").length;
+  document.querySelector(".page-title-notifications p").innerHTML = `You've ${unreadNotifications} unread notification${unreadNotifications !== 1 ? 's' : ''}`;
+}
+
+updateUnreadCount();
