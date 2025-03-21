@@ -12,15 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// FOR THE BUTTON CLICK
 document.addEventListener("DOMContentLoaded", function () {
-  document.querySelector(".toggle-read").addEventListener("click", function () {
-    document.querySelectorAll(".text-container").forEach(row => {
-      let statusCell = row.querySelector(".text-container"); // Find the status cell
+  document.querySelector(".toggle-status-on").addEventListener("click", function () {
+    document.querySelectorAll(".clickable-row.table-active").forEach(row => {
+      let statusCell = row.querySelector(".status"); // Find the status cell
+
+      statusCell.textContent = "Active";
+      statusCell.classList.remove("text-warning");
+      statusCell.classList.add("text-success");
 
 
-      statusCell.classList.remove("notification-unread");
-
+      row.classList.remove("table-active");
     });
   });
 });
