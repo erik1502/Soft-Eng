@@ -133,6 +133,18 @@ body {
     background-color: #FFEDFC;
 }
 
+.manager-accounts p {
+    border-right: 1px solid #FF69B5 !important;
+    margin: auto;
+    color: #FF69B5;
+}
+
+.manager-accounts img {
+    width: 37px;
+    height: 37px;
+
+}
+
 
 /* .table-accounts table {
     background-color: black;

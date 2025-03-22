@@ -52,7 +52,17 @@ body {
 
 
 
+.manager-accounts p {
+  border-right: 1px solid #FF69B5 !important;
+  margin: auto;
+  color: #FF69B5;
+}
 
+.manager-accounts img {
+  width: 37px;
+  height: 37px;
+
+}
 
 .images {
   width: 24px;

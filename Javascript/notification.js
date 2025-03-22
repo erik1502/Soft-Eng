@@ -5,12 +5,17 @@ document.addEventListener("DOMContentLoaded", function () {
   const showUnreadBtn = document.getElementById("showUnread");
   const markAsReadBtn = document.getElementById("markAsRead");
 
+
+
+
   function toggleActiveButton(activeButton) {
     // Remove bg-btn from "All" and "Unread" buttons
     document.querySelectorAll("#showAll, #showUnread").forEach(btn => btn.classList.remove("bg-btn"));
     // Add bg-btn to the clicked button
     activeButton.classList.add("bg-btn");
   }
+
+
 
   function updateUnreadCount() {
     let unreadNotifications = document.querySelectorAll(".notification-unread").length;
