@@ -85,6 +85,20 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+});
 
 
+
+// REMOVE ACCOUNT BUTTON FUNCTION
+document.addEventListener("DOMContentLoaded", function () {
+  // Select all remove buttons
+  const removeButtons = document.querySelectorAll(".remove-btn");
+
+  // Loop through each button and add a click event listener
+  removeButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      // Find the parent <tr> of the clicked button and remove it
+      this.closest("tr").remove();
+    });
+  });
 });
