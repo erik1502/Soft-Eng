@@ -97,26 +97,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // REMOVE ACCOUNT BUTTON FUNCTION
-document.addEventListener("DOMContentLoaded", function () {
+// document.addEventListener("DOMContentLoaded", function () {
 
-  // Select all remove buttons
-  const removeButtons = document.querySelectorAll(".remove-btn");
+//   // Select all remove buttons
+//   const removeButtons = document.querySelectorAll(".remove-btn");
 
-  // Loop through each button and add a click event listener
-  removeButtons.forEach(button => {
-    button.addEventListener("click", function () {
-      // Find the parent <tr> of the clicked button and remove it
-      this.closest("tr").remove();
+//   // Loop through each button and add a click event listener
+//   removeButtons.forEach(button => {
+//     button.addEventListener("click", function () {
+//       // Find the parent <tr> of the clicked button and remove it
+//       this.closest("tr").remove();
 
 
-      const tableBody = document.querySelector("tbody"); // Select tbody instead of the whole table
-      const rows = Array.from(tableBody.querySelectorAll("tr")); // Only get tbody rows
-      initializePagination(rows);
+//       const tableBody = document.querySelector("tbody"); // Select tbody instead of the whole table
+//       const rows = Array.from(tableBody.querySelectorAll("tr")); // Only get tbody rows
+//       initializePagination(rows);
 
-    });
-  });
+//     });
+//   });
 
-});
+// });
+
+function removeFunction() {
+
+}
 
 
 
@@ -190,7 +194,7 @@ function initializePagination(rows) {
 
 document.addEventListener("DOMContentLoaded", function () {
   const tableBody = document.querySelector("tbody");
-  const originalRows = Array.from(tableBody.querySelectorAll("tr")); // Store all rows
+  let originalRows = Array.from(tableBody.querySelectorAll("tr")); // Store all rows
 
   if (tableBody) {
     initializePagination(originalRows); // Load all rows initially
@@ -200,6 +204,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const searchInput = document.querySelector(".search-bar input");
   const filterSelect = document.querySelector(".form-select");
 
+
+
   searchInput.addEventListener("keyup", function () {
     updateFilteredResults(originalRows); // Start filtering from full dataset
   });
@@ -207,7 +213,30 @@ document.addEventListener("DOMContentLoaded", function () {
   filterSelect.addEventListener("change", function () {
     updateFilteredResults(originalRows); // Start filtering from full dataset
   });
+
+
+  // Add event listener for remove buttons
+  const removeButtons = document.querySelectorAll(".remove-btn");
+  removeButtons.forEach(button => {
+    button.addEventListener("click", function () {
+      const row = this.closest("tr"); // Get the row associated with the clicked button
+
+      if (row) {
+        row.remove(); // Remove the row from the table
+
+        // Update `originalRows` by filtering out the removed row
+        originalRows = originalRows.filter(r => r !== row);
+
+        // Reapply pagination after removal
+        updateFilteredResults(originalRows);
+
+      }
+    });
+  });
+
 });
+
+
 
 function updateFilteredResults(originalRows) {
   const searchValue = document.querySelector(".search-bar input").value.toLowerCase();
