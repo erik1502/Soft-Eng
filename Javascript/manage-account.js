@@ -63,3 +63,28 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+// SEARCH FUNCTION
+document.addEventListener("DOMContentLoaded", function () {
+  const searchInput = document.querySelector(".search-bar input"); // Get search input
+  const tableRows = document.querySelectorAll(".table-accounts tbody tr"); // Get all table rows
+
+  searchInput.addEventListener("keyup", function () {
+    const searchValue = searchInput.value.toLowerCase(); // Get input value and convert to lowercase
+
+    tableRows.forEach(row => {
+      const nameCell = row.querySelector("td:nth-child(2)"); // Get the "Staff Name" column
+      const nameText = nameCell.textContent.toLowerCase(); // Convert text to lowercase
+
+      // Check if search input matches the staff name
+      if (nameText.includes(searchValue)) {
+        row.style.display = ""; // Show matching rows
+      } else {
+        row.style.display = "none"; // Hide non-matching rows
+      }
+    });
+  });
+
+
+});
