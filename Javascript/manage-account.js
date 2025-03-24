@@ -118,9 +118,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // });
 
-function removeFunction() {
-
-}
 
 
 
@@ -235,6 +232,8 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
 });
+
+
 
 
 
